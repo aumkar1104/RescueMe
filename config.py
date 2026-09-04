@@ -1,0 +1,37 @@
+from dotenv import load_dotenv
+import os
+load_dotenv()
+
+RAZORPAY_KEY_ID     = os.getenv("RAZORPAY_KEY_ID")
+RAZORPAY_KEY_SECRET = os.getenv("RAZORPAY_KEY_SECRET")
+OPENAI_API_KEY      = os.getenv("OPENAI_API_KEY")
+
+MAX_AUTO_AMOUNT     = 50000
+MAX_RETRY_ATTEMPTS  = 3
+MIN_NUDGE_GAP_HRS   = 4
+BATCH_SIZE          = 50
+
+SOFT_DECLINE_CODES  = [
+    "INSUFFICIENT_FUNDS",
+    "NETWORK_ERROR",
+    "BANK_TIMEOUT",
+    "PAYMENT_TIMEOUT"
+]
+
+HARD_STOP_CODES     = [
+    "CARD_STOLEN",
+    "FRAUD_DETECTED",
+    "CARD_BLOCKED",
+    "ACCOUNT_FROZEN"
+]
+
+CHECKOUT_DROP_CODES = [
+    "CHECKOUT_DROP",
+    "SESSION_EXPIRED",
+    "USER_DROPPED"
+]
+
+EXPIRED_CARD_CODES  = [
+    "EXPIRED_CARD",
+    "INVALID_CARD"
+]
